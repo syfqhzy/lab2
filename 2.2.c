@@ -6,7 +6,7 @@ int main(int argc, char **argv){
 	int pid; /*process ID*/
 
 	switch (pid = fork()){
-	case0:  /*a fork returns 0 to the child*/
+	case 0:  /*a fork returns 0 to the child*/
 		printf("I am the child process: pid=%d\n", getpid());
 		break;
 
@@ -14,7 +14,7 @@ int main(int argc, char **argv){
 		printf("I am the parent process: pid=%d, child pid=%d\n", getpid(), pid);
 		break;
 	
-	case-1: /*something went wrong*/
+	case -1: /*something went wrong*/
 		perror("fork");
 		exit(1);
 	}
